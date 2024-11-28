@@ -1,15 +1,15 @@
-import 'package:ecopilah_reborn/Screen/detailedukasi.dart';
-import 'package:ecopilah_reborn/model/edukasilist.dart';
+import 'package:ecopilah_reborn/Screen/detailsampah.dart';
+import 'package:ecopilah_reborn/model/ecopilahlist.dart';
 import 'package:flutter/material.dart';
 
-class Edukasisampah extends StatefulWidget {
-  const Edukasisampah({super.key});
+class Daftar_Sampah extends StatefulWidget {
+  const Daftar_Sampah({super.key});
 
   @override
-  State<Edukasisampah> createState() => _EdukasisampahState();
+  State<Daftar_Sampah> createState() => _DaftarsampahState();
 }
 
-class _EdukasisampahState extends State<Edukasisampah> {
+class _DaftarsampahState extends State<Daftar_Sampah> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _EdukasisampahState extends State<Edukasisampah> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "List Edukasi",
+                "Daftar Sampah",
                 style: TextStyle(fontSize: 18, fontFamily: 'Adlam', color: Color(0xFF4C7766)),
               ),
               const SizedBox(height: 12),
@@ -29,14 +29,14 @@ class _EdukasisampahState extends State<Edukasisampah> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
-                    children: edukasiSampahList.map((edukasi) {
+                    children: DaftarSampahList.map((sampah) {
                       return GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  Detailedukasi(edukasi: edukasi),
+                                  Detailsampah(sampah: sampah,),
                             ),
                           );
                         },
@@ -55,7 +55,7 @@ class _EdukasisampahState extends State<Edukasisampah> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
                                     image: DecorationImage(
-                                      image: AssetImage(edukasi.imageEdu),
+                                      image: AssetImage(sampah.imageAsset),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -63,7 +63,7 @@ class _EdukasisampahState extends State<Edukasisampah> {
                                 const SizedBox(width: 10),
                                 Expanded(
                                   child: Text(
-                                    edukasi.name,
+                                    sampah.name,
                                     style: const TextStyle(
                                       fontFamily: 'lexand',
                                       color: Color(0xFF4C7766),

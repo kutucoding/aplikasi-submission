@@ -1,5 +1,7 @@
+import 'package:ecopilah_reborn/Screen/daftar_sampah.dart';
 import 'package:ecopilah_reborn/Screen/detailedukasi.dart';
 import 'package:ecopilah_reborn/Screen/detailsampah.dart';
+import 'package:ecopilah_reborn/Screen/edukasiSampah.dart';
 import 'package:ecopilah_reborn/model/ecopilahlist.dart';
 import 'package:ecopilah_reborn/model/edukasilist.dart';
 import 'package:flutter/material.dart';
@@ -38,16 +40,34 @@ class _HomeState extends State<Home> {
                 height: 20,
               ),
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                child: const Row(
+                margin: const EdgeInsets.only(left: 20, right: 20),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Sampah Teratas",
                       style: TextStyle(
                           fontFamily: 'Adlam',
                           fontSize: 20,
                           color: Color(0xFF4C7766)),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Daftar_Sampah(),
+                            ),
+                          );
+                      },
+                      child: const Text(
+                        "See All",
+                        style: TextStyle(
+                            fontFamily: 'lexand',
+                            fontSize: 12,
+                            color: Color(0xFF4C7766)),
+                      ),
                     ),
                   ],
                 ),
@@ -112,21 +132,39 @@ class _HomeState extends State<Home> {
                 height: 20,
               ),
               Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                child: const Row(
+                margin: const EdgeInsets.only(left: 20, right: 20),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Edukasi Pengolahan",
                       style: TextStyle(
                           fontFamily: 'Adlam',
                           fontSize: 20,
                           color: Color(0xFF4C7766)),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  Edukasisampah(),
+                            ),
+                          );
+                      },
+                      child: const Text(
+                        "See All",
+                        style: TextStyle(
+                            fontFamily: 'lexand',
+                            fontSize: 12,
+                            color: Color(0xFF4C7766)),
+                      ),
+                    ),
                   ],
                 ),
               ),
-              SizedBox(height: 5,),
+              const SizedBox(height: 5,),
               SizedBox(
                 height: 150,
                 child: SingleChildScrollView(

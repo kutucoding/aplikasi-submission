@@ -1,3 +1,5 @@
+import 'package:flutter/src/widgets/gesture_detector.dart';
+
 class DaftarSampah {
   String name;
   String imageAsset;
@@ -8,6 +10,8 @@ class DaftarSampah {
     required this.imageAsset,
     required this.description,
   });
+
+  static map(GestureDetector Function(dynamic sampah) param0) {}
 }
 
 var DaftarSampahList = [
